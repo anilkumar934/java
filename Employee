@@ -1,0 +1,34 @@
+import javax.swing.JOptionPane;
+class ak{
+    String name;
+    int id,salary,no_of_hours;
+    void getinfo(int i){
+        name=JOptionPane.showInputDialog("enter employee"+i+" name");
+        id=Integer.parseInt(JOptionPane.showInputDialog("enter employee"+i+" id"));
+        salary=Integer.parseInt(JOptionPane.showInputDialog("enter employee"+i+" salary"));
+        no_of_hours=Integer.parseInt(JOptionPane.showInputDialog("enter employee"+i+" hours"));
+    }
+    void AddSal(){
+        if(salary<500){
+            salary=salary+10;
+        }
+    }
+    void Addwork(){
+        if(no_of_hours>6){
+            salary=salary+5;
+        }
+    }
+}
+class printf{
+    public static void main(String []args){
+        int i,n;
+        n=Integer.parseInt(JOptionPane.showInputDialog("enter how many employees you want"));
+        for(i=1;i<=n;i++){
+            ak a=new ak();
+            a.getinfo(i);
+            a.AddSal();
+            a.Addwork();
+            System.out.println("the salary of "+"employee "+i+" is "+a.salary);
+        }
+    }
+}
